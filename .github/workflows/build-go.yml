@@ -16,16 +16,18 @@ jobs:
         uses: crazy-max/ghaction-xgo@v2
         with:
             xgo_version: latest
-            go_version: 1.18
+            go_version: latest
             prefix: prometheus-ecs-discovery
             targets: linux/arm64
             race: false
             ldflags: -s -w
             buildmode: default
             trimpath: true
+            working_dir: ./build
+
       - name: Debug
-        run: ls -lsa
+        run: ls -lsa ./build/
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-            files: /prometheus-ecs-discovery
+            files: ./build/prometheus-ecs-discovery
