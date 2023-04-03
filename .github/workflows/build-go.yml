@@ -26,4 +26,4 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-            files: /build/prometheus-ecs-discovery-linux-arm64
+            files: /prometheus-ecs-discovery
