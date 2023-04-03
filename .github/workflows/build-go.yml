@@ -18,8 +18,7 @@ jobs:
             xgo_version: latest
             go_version: 1.18
             prefix: prometheus-ecs-discovery
-            targets: linux/amd64,linux/arm64
-            x: true
+            targets: linux/arm64
             race: false
             ldflags: -s -w
             buildmode: default
@@ -27,4 +26,4 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-            files: prometheus-ecs-discovery
+            files: /build/prometheus-ecs-discovery-linux-arm64
