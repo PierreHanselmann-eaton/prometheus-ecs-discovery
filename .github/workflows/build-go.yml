@@ -17,7 +17,6 @@ jobs:
         with:
             xgo_version: latest
             go_version: 1.18
-            dest: /
             prefix: prometheus-ecs-discovery
             targets: linux/arm64
             race: false
