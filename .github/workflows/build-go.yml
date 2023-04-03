@@ -23,11 +23,11 @@ jobs:
             ldflags: -s -w
             buildmode: default
             trimpath: true
-            working_dir: ./build
+            working_dir: ./
 
       - name: Debug
-        run: ls -lsa ./build/
+        run: ls -lsa ./ && pwd
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-            files: ./build/prometheus-ecs-discovery
+            files: ./prometheus-ecs-discovery
