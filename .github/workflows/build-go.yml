@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
       - name: Build
         uses: crazy-max/ghaction-xgo@v2
         with:
@@ -23,6 +23,8 @@ jobs:
             ldflags: -s -w
             buildmode: default
             trimpath: true
+      - name: Debug
+        run: ls -lsa
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
